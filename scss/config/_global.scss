@@ -20,19 +20,4 @@ a {
   margin: 0 auto;
   padding: 0 15px;
 
-  @include containermaker(sm) {
-    max-width: $col-sm;
-  }
-
-  @include containermaker(md) {
-    max-width: $col-md;
-  }
-
-  @include containermaker(lg) {
-    max-width: $col-lg;
-  }
-
-  @include containermaker(xl) {
-    max-width: $col-xl;
-  }
 }
