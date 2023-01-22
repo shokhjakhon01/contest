@@ -1,0 +1,51 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+//- to container
+
+$col-sm: 540px;
+$col-md: 720px;
+$col-lg: 960px;
+$col-xl: 1140px;
+
+//breakpoints
+$breakpoints: (
+	sm: $sm,
+	md: $md,
+	lg: $lg,
+	xl: $xl,
+);
+
+// texts
+@mixin mainText($font,$style,$weight,$size,$height) {
+	font-family: $font;
+	font-style: $style;
+	font-weight: $weight;
+	font-size: $size;
+	line-height: $height;
+}
+
+// displays
+@mixin display-main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+// mixin for responsive
+@mixin media($size) {
+	@media screen and (max-width:#{$size}px) {
+		@content;
+	}
+}
+
+// mixin for container
+@mixin containermaker($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+			@content;
+		}
+	}
+}
